@@ -1,0 +1,45 @@
+<!-- <stockmarket-stock-item-favorite (togglefavorite)="doToggleFav($event)" ></stockmarket-stock-item-favorite>
+
+<!<stockmarket-stock-item-cart></stockmarket-stock-item-cart> -->
+
+<!-- <stockmarket-create-stock-item></stockmarket-create-stock-item> -->
+<!-- 
+<stockMarket-stock-item [stocks] ="stockArray" (togglefavorite)="doToggleFav($event)" ></stockMarket-stock-item>  -->
+
+<!-- <stockMarket-stock-item ></stockMarket-stock-item> -->
+<!-- <app-cart-item></app-cart-item> -->
+<!-- <app-login > </app-login> -->
+<!-- <app-register></app-register> -->
+
+<div class="container">
+
+    <div class="row">
+
+        <div class=" col-md-4 ">
+            <div class="list-group">
+                <a routerLink="login" role="button" class="list-group-item list-group-item-action"
+                    routerLinkActive="active">Login</a>
+                <a routerLink="register" role="button" class="list-group-item list-group-item-action"
+                    routerLinkActive="active">Register Form</a>
+                <a routerLink="stockItem" role="button" class="list-group-item list-group-item-action ">Stock Item</a>
+                <a routerLink="createStock" role="button" class="list-group-item list-group-item-action ">Create Stock</a>
+            </div>
+        </div>
+
+
+            <div class=" col-md-6">
+
+                <router-outlet></router-outlet>
+
+
+
+            </div>
+
+
+       
+
+
+    </div>
+
+
+</div>

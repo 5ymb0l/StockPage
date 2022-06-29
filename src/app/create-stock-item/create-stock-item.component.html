@@ -1,0 +1,202 @@
+<!-- 
+<div class="row">
+    <div class="col-md-4 offset-md-3">
+        <h2> Create Stock Form</h2>
+        <form (ngSubmit)="createStock(StockForm)" #StockForm = "ngForm">
+            
+            <div class="form-group">
+                <label for="">Stock ID</label>
+                <input type="text" name="stockID" [id]="stock.id" [value]="stock.id" class="form-control"
+                    placeholder="" aria-describedby="helpId" [(ngModel)]="stock.id" #StockId = "ngModel" required>
+                    <p class="text-danger" *ngIf="StockId.errors && StockId.errors?.['required']">
+                    Stock Id Mandatory
+                    </p> -->
+<!-- <small id="helpId" class="text-muted">Help text</small> -->
+
+<!-- </div> -->
+<!-- <div class="form-group">
+                <label for=""> Stock Name</label>
+                <input type="text" name="stockName" [id]="stock.id" [value]="stock.name" class="form-control"
+                    placeholder="" aria-describedby="helpId" [(ngModel)]="stock.name" #StockName = "ngModel"required> -->
+<!-- <small id="helpId" class="text-muted">Help text</small> -->
+
+<!-- </div> -->
+
+<!-- <div class="form-group">
+                <label for=""> Stock Code</label>
+                <input type="text" name="stockCode" [id]="stock.id" [value]="stock.code" class="form-control"
+                    placeholder="" aria-describedby="helpId" [(ngModel)]="stock.code">
+                <small id="helpId" class="text-muted">Help text</small>
+
+    
+             </div> -->
+
+<!-- <div class="form-group">
+                <label for="">Stock Price</label>
+                <input type="text" name="stockPrice" [id]="stock.id" [value]="stock.price" class="form-control"
+                    placeholder="" aria-describedby="helpId" [(ngModel)]="stock.price" #StockPrice = "ngModel"required minlength="2">
+                    <p class="text-warning" *ngIf="StockPrice.dirty && StockPrice.invalid">
+                        <span *ngIf="StockPrice.errors?.['required']">
+                            Stock Price is required
+                        </span>
+                        <span *ngIf = "StockPrice.errors?.['minlength']">
+
+                           it should be greater than 2
+                        </span>
+                 </p> -->
+<!-- <small id="helpId" class="text-muted">Help text</small> -->
+
+<!-- </div> -->
+
+<!-- <div class="form-group">
+                <label for=""> Stock Previousprice</label>
+                <input type="text" [name]="stock.name" [id]="stock.id" [value]="stock.previousprice" class="form-control"
+                    placeholder="" aria-describedby="helpId" [(ngModel)]="stock.previousprice">
+                <small id="helpId" class="text-muted">Help text</small>
+    
+            </div> -->
+<!--             
+            <div class="form-group">
+            <label for=""> Stock Codes</label>
+            <select class="form-control" name="stockCodes" [id]="stock.id" [(ngModel)]="stock.code" #StockCode = "ngModel"required>
+              <option *ngFor=" let code of stockCodes"[ngValue]="code">{{code}}</option>
+           
+            </select>
+          </div>  
+
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" [(ngModel)]="confirm" class="form-check-input" name="terms" [id]="stock.id" > Agree terms
+            </label>
+          </div>
+
+            <button class="btn btn-primary" type="submit" [disabled]="!confirm"> create </button>
+
+           
+        </form>
+
+    
+        <h3>{{stock|json}}</h3>
+    </div> -->
+
+
+<!-- <div class="form-group">
+                <label for=""> Stock Name</label>
+                <input type="text" name="stockName" [id]="stock.id" [value]="stock.name" class="form-control"
+                    placeholder="" aria-describedby="helpId" (click)="submit()" [formControl]=" nameControl"> -->
+<!-- <small id="helpId" class="text-muted">Help text</small> -->
+<!--     
+            </div>
+
+            <p>{{nameControl.value | json}} </p>
+            <p>{{nameControl.status| json}}</p>
+    
+</div> -->
+
+
+<div class="row">
+    <div class="col-md-4 offset-md-3">
+        <h2> Create Stock Form</h2>
+        <form action="" [formGroup]="stockForm" (ngSubmit)="onsubmit()">
+
+            <div class="form-group">
+                <label for="">Stock ID</label>
+                <input type="text" name="stockID" [id]="stock.id" [value]="stock.id" class="form-control" placeholder=""
+                    aria-describedby="helpId">
+
+
+            </div>
+            <div class="form-group">
+                <label for=""> Stock Name</label>
+                <input type="text" name="stockName" [id]="stock.id" [value]="stock.name" class="form-control"
+                    placeholder="" aria-describedby="helpId" formControlName="name">
+                <p class="text-danger"
+                    *ngIf="stockForm.get('name')?.invalid &&(stockForm.get('name')?.dirty || stockForm.get('name')?.touched)">
+                    Stock Name Mandatory
+                </p>
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="">Stock Price</label>
+                <input type="number" name="stockPrice" [id]="stock.id" [value]="stock.price" class="form-control"
+                    placeholder="" aria-describedby="helpId" formControlName="price">
+                <p class="text-danger "
+                    *ngIf="stockForm.get('price')?.invalid &&(stockForm.get('price')?.dirty || stockForm.get('price')?.touched)">
+
+                    <span>
+
+                        Stock Price Mandatory it should be greater than 2
+                    </span>
+                </p>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for=""> Stock Codes</label>
+                <select class="form-control" name="stockCodes" [id]="stock.id" formControlName="code">
+                    <option *ngFor=" let code of stockCodes" [ngValue]="code">{{code}}</option>
+
+                </select>
+                <p class="text-danger "
+                    *ngIf="stockForm.get('code')?.invalid &&(stockForm.get('code')?.dirty || stockForm.get('code')?.touched)">
+                    Stock Codes Mandatory
+                </p>
+
+            </div>
+
+
+            <div class="form-check">
+                <label class="form-check-label" for="acceptTerms">
+                    <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input"
+                        [ngClass]="{'is-invalid' : confirm }"> Accept terms
+                </label>
+                <div *ngIf="confirm" class="invalid-feedback">
+                    Accept Ts & Cs is required
+
+                </div>
+
+            </div>
+
+            <button class="btn btn-primary mr-1">Submit</button>
+            <!-- <button class="btn btn-primary" type="submit" [disabled]="!confirm"> create </button> -->
+            <button class="btn btn-primary " type="button" (click)="onReset()"> Reset</button>
+        </form>
+
+        <h3>{{stock|json}}</h3>
+        <div class=" text-danger">
+            <p>
+                {{message}}
+            </p>
+
+        </div>
+
+    </div>
+    <p>{{stockForm.value | json}} </p>
+    <p>{{stockForm.status| json}}</p>
+
+</div>
+
+
+    <!-- <div class="form-group">
+                <label for=""> Stock Code</label>
+                <input type="text" name="stockCode" [id]="stock.id" [value]="stock.code" class="form-control"
+                    placeholder="" aria-describedby="helpId" [(ngModel)]="stock.code">
+                <small id="helpId" class="text-muted">Help text</small>
+
+    
+             </div> -->
+
+
+
+    <!-- <div class="form-group">
+                <label for=""> Stock Previousprice</label>
+                <input type="text" [name]="stock.name" [id]="stock.id" [value]="stock.previousprice" class="form-control"
+                    placeholder="" aria-describedby="helpId" [(ngModel)]="stock.previousprice">
+                <small id="helpId" class="text-muted">Help text</small>
+    
+ 
+ 
+           </div> -->

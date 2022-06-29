@@ -1,0 +1,103 @@
+<div class="container">
+
+    <div class="row">
+       
+
+        <div class="col-md-3" *ngFor="let stock of stocks ; index as i; even as isEven; ">
+     
+            <div class="card text-white bg-dark mr-1" style="width: 18rem" routerLink="/stockDetails/{{stock.code}}">
+                <img class="card-img-top" src="" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Name: {{stock.name + '('+stock.code+')'}}</h4>
+                    <p class="card-text">Price : {{stock.price}}</p>
+                    <p class="card-text">{{stock.previousprice}}</p>
+                    <p class="card-text"><small>{{stock.code}}</small></p>
+                    <!-- <div class = "text-primary"[class]="stock.ispositivechange() ? 'text-success' : 'text-danger'" > 
+           {{stock.price}}
+       </div> -->
+
+
+                    <!-- NgClass -->
+
+
+                    <!-- <div class="text-primary"
+                        [ngClass]=" {'text-success':stock.ispositivechange(), 'text-danger' :  stock.ispositivechange(), 'small-change' : true}">
+                        {{stock.price}}
+                    </div> -->
+                    <!-- 
+                      <button type="button" class = "btn btn-primary" [disabled]="stock.favorite" (click)="toggleFav ()"> Add to fav</button> -->
+
+                    <!-- <button type="button" class="btn btn-primary" (click)="toggleFav ($event , i)" *ngIf="stock.favorite"> Add to
+                        fav</button> -->
+                    <button type="button" (click)="doToggleFav(stock.id)" [disabled]="stock.favorite"
+                        [ngClass]="{'btn-success': isEven, 'btn btn-primary': true}"> Add to
+                        fav</button>
+                    
+                    <button type="button" class = "btn btn-primary"(click)="onRemove(stock)" > Remove </button>
+
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        {{persons | json}}
+
+        <ul *ngFor="let p of persons" [ngSwitch]="p.country">
+
+
+            <li *ngSwitchCase="'India'" class="text-success">
+
+                {{p.name}} ,{{p.age}}
+
+            </li>
+
+            <li *ngSwitchCase="'UK'" class="text-danger">
+
+                {{p.name}} {{p.age}}
+
+
+            </li>
+
+            <li *ngSwitchDefault="" class="text-primary">
+                {{p.name}} , {{p.age}}
+
+            </li>
+
+
+        </ul>
+
+    </div>
+
+  <div class="row">
+<div class="col-md-4">
+
+<form action="" name="stockSearchForm">
+<div class="form-group">
+  <label for=""> Search Stock</label>
+  <input type="search" [(ngModel)]="searchString" (keyup)="search()"
+  
+    class="form-control" name="stockSearch" id="" aria-describedby="helpId" placeholder="">
+
+    <button name="" id="" class="btn btn-primary"  type="button"> Search</button>
+    <p>{{searchString}}</p>
+
+</div>
+
+
+</form>
+
+</div>
+
+
+  </div>
+</div>
