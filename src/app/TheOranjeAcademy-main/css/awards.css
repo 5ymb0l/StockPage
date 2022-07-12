@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+@media (min-width: 992px) {
+  /* div-1 */
+  #div-1 {
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: #afafaf;
+    background-size: cover;
+    background-position: center;
+    -webkit-transition: background-image 0.7s ease-in-out;
+    transition: background-image 0.7s ease-in-out;
+  }
+
+  #logo-img {
+    z-index: 2;
+    height: 29.585vw;
+    width: 43.77vw;
+    margin: auto;
+  }
+
+  /* Nav bar */
+  #nav {
+    background-color: #fff;
+    padding-bottom: 0;
+  }
+  .nav-link,
+  .navbar-brand {
+    letter-spacing: 15;
+    font-weight: 500;
+    color: #ff8000 !important;
+    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black",
+      "sans-serif" !important;
+  }
+  .nav-link {
+    font-size: 1.1em;
+  }
+  .navbar-brand {
+    margin-left: 5%;
+  }
+
+  #navbarNav {
+    justify-content: flex-end;
+    padding-right: 0%;
+  }
+  .navbar-nav {
+    margin-left: 30%;
+    margin-right: 0%;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  /* div-2 */
+  #div-2 {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+  }
+  /* div-2-1 */
+  #div-2-1 {
+    height: 92vh;
+    display: grid;
+    column-gap: 2vw;
+    grid-template-columns: 3fr 2fr;
+  }
+  #div-2-11 > hr {
+    margin-top: 10vh;
+    margin-left: 2vw;
+    background-color: #030452;
+    width: 8vw;
+    height: 5px;
+    border-radius: 0.2vw;
+  }
+  #div-2-11 > h2 {
+    letter-spacing: 2px;
+    word-spacing: 0.7vw;
+    font-weight: 700;
+    margin-left: 2vw;
+    color: #ff8000;
+  }
+  #div-2-11 > p {
+    margin-top: 5vh;
+    margin-left: 2vw;
+    color: #030452;
+    font-size: large;
+    margin-right: 12vw;
+  }
+  #div-2 img {
+    height: 60vh;
+    width: 50vw;
+  }
+  /* div-2-2 */
+  #div-2-2 {
+    height: 92vh;
+    display: grid;
+    column-gap: 2vw;
+    margin-left: 5vw;
+    grid-template-columns: 2fr 3fr;
+  }
+  #div-2-21 > hr {
+    margin-top: 10vh;
+    background-color: #030452;
+    width: 8vw;
+    height: 5px;
+    margin-left: 0;
+    border-radius: 0.2vw;
+  }
+  #div-2-21 > h2 {
+    letter-spacing: 2px;
+    word-spacing: 0.7vw;
+    font-weight: 700;
+    color: #ff8000;
+  }
+  #div-2-21 > p {
+    margin-top: 5vh;
+    color: #030452;
+    font-size: large;
+  }
+  /* div-8 */
+  #div-8 {
+    margin-top: 6%;
+    display: grid;
+    margin-bottom: 5%;
+  }
+  #div-8 > h1 {
+    padding: 0;
+    text-align: center;
+    color: #030452;
+  }
+  #div-8 > p {
+    margin: 2%;
+    margin-left: 23%;
+    margin-right: 23%;
+    text-align: center;
+    color: #ff8000;
+  }
+  #gallery {
+    align-items: center;
+    margin-left: 10%;
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+  }
+  #gallery > img {
+    height: 300px;
+    width: 300px;
+  }
+
+  #div-8 > a {
+    margin: 15px auto;
+    padding-top: 1px;
+    padding-bottom: 0.25%;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: calc(12px + 0.5vw);
+    display: block;
+    text-align: center;
+    border: 2px solid #ff8000;
+    color: #030452;
+  }
+  /* div-4 */
+  #div-4 {
+    height: 200vh;
+  }
+  /* div-11 */
+  #div-11 {
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff8000;
+    color: #fff;
+  }
+}
+@media (max-width: 992px) {
+  /* div-1 */
+  #div-1 {
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: #afafaf;
+  }
+
+  #logo-img {
+    z-index: 2;
+    height: 650px;
+    width: 650px;
+    margin: auto;
+  }
+
+  /* Nav bar */
+  #nav {
+    background-color: #fff;
+    padding-bottom: 0;
+  }
+  .nav-link,
+  .navbar-brand {
+    letter-spacing: 15;
+    font-weight: 500;
+    color: #ff8000 !important;
+    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black",
+      "sans-serif" !important;
+  }
+  .nav-link {
+    font-size: 1.1em;
+  }
+  .navbar-brand {
+    margin-left: 5%;
+  }
+
+  #navbarNav {
+    justify-content: flex-end;
+    padding-right: 0%;
+  }
+  .navbar-nav {
+    margin-left: 30%;
+    margin-right: 0%;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  /* div-11 */
+  #div-11 {
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff8000;
+    color: #fff;
+  }
+}

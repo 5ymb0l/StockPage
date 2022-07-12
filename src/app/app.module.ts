@@ -13,6 +13,13 @@ import { StockService } from './services/stock.service';
 import { LoginComponent } from './stock/login/login.component';
 import { RegisterComponent } from './stock/register/register.component';
 import { StockDetailsComponent } from './stock/stock-details/stock-details.component';
+import { MainComponent } from './oranje/main/main.component';
+import { ClubComponent } from './oranje/club/club.component';
+import { ContactComponent } from './oranje/contact/contact.component';
+import { SinceComponent } from './oranje/since/since.component';
+import { AwardComponent } from './oranje/award/award.component';
+import { VideosComponent } from './oranje/videos/videos.component';
+import { GalleryComponent } from './oranje/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +31,14 @@ import { StockDetailsComponent } from './stock/stock-details/stock-details.compo
     CreateStockItemComponent,
     LoginComponent,
     RegisterComponent,
-    StockDetailsComponent
+    StockDetailsComponent,
+    MainComponent,
+    ClubComponent,
+    ContactComponent,
+    SinceComponent,
+    AwardComponent,
+    VideosComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
